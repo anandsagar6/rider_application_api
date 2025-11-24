@@ -2,8 +2,10 @@ services:
   - type: web
     name: Rideer_Application_Api
     runtime: java
-    buildCommand: "mvn clean install -DskipTests"
+    buildCommand: "./mvnw clean install -DskipTests"
     startCommand: "java -jar target/*.jar"
     envVars:
+      - key: PORT
+        value: 8080
       - key: SPRING_PROFILES_ACTIVE
         value: production
